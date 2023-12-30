@@ -1,10 +1,5 @@
 let accounts;
 
-const Web3 = require('web3');
-
-// Create Web3 instance
-const web3 = new Web3(window.ethereum);
-
 // METAMASK CONNECTION
 window.addEventListener("DOMContentLoaded", async () => {
   const welcomeH1 = document.getElementById("welcomeH1");
