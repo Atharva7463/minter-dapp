@@ -287,7 +287,7 @@ function setTotalPrice() {
     mintInput.disabled = true;
     return;
   }
-  const totalPriceWei = 10000000000000;
+  const totalPriceWei = BigInt(mintPrice) * BigInt(mintInputValue);
   
   let priceType = '';
   if(chain === 'goerli' || chain === 'ethereum') {
@@ -307,10 +307,9 @@ async function mint() {
   const spinner = '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
   mintButton.innerHTML = spinner;
 
-  const mintPrice = 50000;
+  const mintPrice = 1;
 
   const amount = parseInt(document.getElementById("mintInput").value);
-  
   const value = BigInt(mintPrice) * BigInt(amount);
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
@@ -320,7 +319,7 @@ async function mint() {
     try {
       const mintTransaction = await contract.methods
         .mint(amount)
-        .send({ from: window.address, value: "value.toString()" });
+        .send({ from: window.address, value: value.toString() });
       if(mintTransaction) {
         if(chain === 'goerli') {
           const url = `https://goerli.etherscan.io/tx/${mintTransaction.transactionHash}`;
