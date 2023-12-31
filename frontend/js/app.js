@@ -320,7 +320,7 @@ async function mint() {
     try {
       const mintTransaction = await contract.methods
         .mint(amount)
-        .send({ from: window.address, value: value.toString() });
+        .send({ from: window.address, value: '1' });
       if(mintTransaction) {
         if(chain === 'goerli') {
           const url = `https://goerli.etherscan.io/tx/${mintTransaction.transactionHash}`;
