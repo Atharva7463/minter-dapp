@@ -165,7 +165,7 @@ async function loadInfo() {
   const mintContainer = document.getElementById("mintContainer");
   const mintButton = document.getElementById("mintButton");
   const spinner = document.getElementById("spinner");
-  // const mintPrice = '10000'; //added my me
+  const mintPrice = '10000'; //added my me
 
   let startTime = "";
   if (publicMintActive) {
@@ -229,7 +229,7 @@ async function loadInfo() {
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
   }
-  const price = web3.utils.fromWei(info.deploymentConfig.publicMintPrice, 'ether');
+  const price = web3.utils.fromWei(mintPrice, 'ether');
   const pricePerMint = document.getElementById("pricePerMint");
   const maxPerMint = document.getElementById("maxPerMint");
   const totalSupply = document.getElementById("totalSupply");
@@ -280,14 +280,14 @@ function setTotalPrice() {
   const mintInputValue = parseInt(mintInput.value);
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
-  // const mintPrice = 100000;
+  const mintPrice = 100000;
   if(mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
     totalPrice.innerText = 'INVALID QUANTITY';
     mintButton.disabled = true;
     mintInput.disabled = true;
     return;
   }
-  const totalPriceWei = BigInt(info.deploymentConfig.publicMintPrice) * BigInt(mintInputValue);
+  const totalPriceWei = BigInt(mintPrice) * BigInt(mintInputValue);
   
   let priceType = '';
   if(chain === 'goerli' || chain === 'ethereum') {
@@ -307,10 +307,10 @@ async function mint() {
   const spinner = '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
   mintButton.innerHTML = spinner;
 
-  // const mintPrice = 1;
+  const mintPrice = 1000;
 
   const amount = parseInt(document.getElementById("mintInput").value);
-  const value = BigInt(info.deploymentConfig.publicMintPrice) * BigInt(amount);
+  const value = BigInt(mintPrice) * BigInt(amount);
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
 
