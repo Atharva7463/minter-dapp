@@ -318,7 +318,7 @@ async function mint() {
     // PUBLIC MINT
     try {
       const mintTransaction = await contract.methods
-        .mint(100)
+        .mint(amount)
         .send({ from: window.address, value: value.toString() });
       if(mintTransaction) {
         if(chain === 'goerli') {
