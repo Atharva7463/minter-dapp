@@ -280,14 +280,14 @@ function setTotalPrice() {
   const mintInputValue = parseInt(mintInput.value);
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
-  const mintPrice = 100000;
+  const mintPrice = 10000;
   if(mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
     totalPrice.innerText = 'INVALID QUANTITY';
     mintButton.disabled = true;
     mintInput.disabled = true;
     return;
   }
-  const totalPriceWei = 10000000000000000000;
+  const totalPriceWei = 100000000000000;
   
   let priceType = '';
   if(chain === 'goerli' || chain === 'ethereum') {
@@ -307,7 +307,7 @@ async function mint() {
   const spinner = '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
   mintButton.innerHTML = spinner;
 
-  const mintPrice = 100000000000000000000;
+  const mintPrice = 1000000000000000;
 
   const amount = parseInt(document.getElementById("mintInput").value);
   const value = BigInt(mintPrice) * BigInt(amount);
