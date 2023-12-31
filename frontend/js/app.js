@@ -287,7 +287,7 @@ function setTotalPrice() {
     mintInput.disabled = true;
     return;
   }
-  const totalPriceWei = BigInt(mintPrice) * BigInt(mintInputValue);
+  const totalPriceWei = 10000000000000;
   
   let priceType = '';
   if(chain === 'goerli' || chain === 'ethereum') {
@@ -295,7 +295,7 @@ function setTotalPrice() {
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
   }
-  const price = web3.utils.fromWei(0.1, 'ether');
+  const price = web3.utils.fromWei(totalPriceWei.toString(), 'ether');
   totalPrice.innerText = `${price} ${priceType}`;
   mintButton.disabled = false;
   mintInput.disabled = false;
