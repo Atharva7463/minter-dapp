@@ -280,6 +280,7 @@ function setTotalPrice() {
   const mintInputValue = parseInt(mintInput.value);
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
+  const mintPrice = 1;
   if(mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
     totalPrice.innerText = 'INVALID QUANTITY';
     mintButton.disabled = true;
@@ -305,6 +306,8 @@ async function mint() {
   mintButton.disabled = true;
   const spinner = '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
   mintButton.innerHTML = spinner;
+
+  const mintPrice = 1;
 
   const amount = parseInt(document.getElementById("mintInput").value);
   const value = BigInt(mintPrice) * BigInt(amount);
