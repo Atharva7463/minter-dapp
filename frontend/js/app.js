@@ -165,7 +165,7 @@ async function loadInfo() {
   const mintContainer = document.getElementById("mintContainer");
   const mintButton = document.getElementById("mintButton");
   const spinner = document.getElementById("spinner");
-  const mintPrice = '1'; //added my me
+  const mintPrice = '10'; //added my me
 
   let startTime = "";
   if (publicMintActive) {
@@ -280,7 +280,7 @@ function setTotalPrice() {
   const mintInputValue = parseInt(mintInput.value);
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
-  const mintPrice = 1;
+  const mintPrice = 100;
   if(mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
     totalPrice.innerText = 'INVALID QUANTITY';
     mintButton.disabled = true;
