@@ -3,33 +3,22 @@
 ## Table of Contents
 
 - [RESOURCES](#resources)
-- [INSTALLATION](#installation)
+
   - [BACKEND](#backend)
   - [BACKEND COMMANDS](#backend-commands)
   - [FRONTEND](#frontend)
 
 ## RESOURCES
 
-### Main Video
-
-🌟 [EASY Minting dApp | Whitelisting | Entire Process!! Create an Entire NFT Collection (10,000+)](https://youtu.be/cLB7u0KQFIs)
-
-### Update Video adding Ethereum support!
-
-🚀 [How To Deploy a Smart Contract to Ethereum!! (Updated Minting dApp)](https://youtu.be/-EB2TTQxSWc)
-
-Base art generator code is from [hashlips_art_engine](https://github.com/HashLips/hashlips_art_engine)
 
 Contract uses [NFTPort](https://nftport.xyz)
 
-Join the Discord server for more help from the community: [codeSTACKr Discord](https://discord.gg/A9CnsVzzkZ)
 
-## INSTALLATION
+
+
 
 ### Backend
 
-- Clone this repo or download the latest release zip file.
-- Unzip, if needed, and open the folder in VS Code.
 - From the terminal run: 
 ```
  cd backend
@@ -125,8 +114,8 @@ $ npm run update_prereveal_token_uri
 - Available fields to update:
   - `prereveal_token_uri` - This will update the pre-reveal token uri for all NFTs. (Hidden image)
   - `base_uri` - This will update the base uri for all NFTs and reveal all.
-  - `public_mint_start_date` - Eg: 2022-02-08T11:30:48+00:00
-  - `presale_mint_start_date` - Eg: 2022-02-08T11:30:48+00:00
+  - `public_mint_start_date` - Eg: 2023-02-08T11:30:48+00:00
+  - `presale_mint_start_date` - Eg: 2023-02-08T11:30:48+00:00
   - `presale_whitelisted_addresses` - Adds address(es) to the whitelist
   - `presale_whitelisted_addresses_remove` - Removes address(es) from the whitelist
   - `royalties_share` - Updates the royalty share
@@ -144,7 +133,5 @@ $ npm run refresh_os --start=1 --end=100
 
 - Update the `frontend/js/abi.js` file with the ABI from `backend/build/contract/_contract_abi.json`.
 - Update your information in the `frontend/js/constants.js` file.
-- Deploy your dApp to Netlify. (Reference the video for full instructions.)
 
 
-## Reference the [main video](https://youtu.be/cLB7u0KQFIs) and [update video](https://youtu.be/-EB2TTQxSWc) for more details.
