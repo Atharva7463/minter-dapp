@@ -149,6 +149,21 @@ async function checkChain() {
               ],
             });
           }
+          //Added by me 
+          if(chain === 'sepolia') {
+    await window.ethereum.request({
+        method: 'wallet_addEthereumChain',
+        params: [
+            {
+                chainName: 'Sepolia Test Network',
+                chainId: '0xsepoliachainid', // Replace '0xsepoliachainid' with the actual chain ID of Sepolia
+                nativeCurrency: { name: 'SEPT', decimals: 18, symbol: 'SEPT' }, // Adjust currency details as per Sepolia's native currency
+                rpcUrls: ['https://sepolia.infura.io/v3/your-infura-project-id'], // Replace 'your-infura-project-id' with your actual Infura project ID for Sepolia
+            },
+        ],
+    });
+}
+//Uptill here....
           updateConnectStatus();
         } catch (err) {
           console.log(err);
