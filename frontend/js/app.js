@@ -108,7 +108,11 @@ async function checkChain() {
     chainId = 137;
   } else if(chain === 'ethereum') {
     chainId = 1;
+  }else if(chain === 'sepolia'){
+    chainID = 11155111;
   }
+  
+  
   if (window.ethereum.networkVersion !== chainId) {
     try {
       await window.ethereum.request({
