@@ -130,7 +130,7 @@ async function checkChain() {
               params: [
                 {
                     chainName: 'Sepolia Test Network',
-                    chainId: '11155111', // Replace '0xsepoliachainid' with the actual chain ID of Sepolia
+                    chainId: web3.utils.toHex(chainId), // Replace '0xsepoliachainid' with the actual chain ID of Sepolia
                     nativeCurrency: { name: 'SEPT', decimals: 18, symbol: 'SepoliaETH' }, // Adjust currency details as per Sepolia's native currency
                     rpcUrls: ['https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'], // Replace 'your-infura-project-id' with your actual Infura project ID for Sepolia
                 },
