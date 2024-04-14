@@ -129,12 +129,21 @@ async function checkChain() {
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainName: 'Goerli Test Network',
-                  chainId: web3.utils.toHex(chainId),
-                  nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
-                  rpcUrls: ['https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+                    chainName: 'Sepolia Test Network',
+                    chainId: '11155111', // Replace '0xsepoliachainid' with the actual chain ID of Sepolia
+                    nativeCurrency: { name: 'SEPT', decimals: 18, symbol: 'SepoliaETH' }, // Adjust currency details as per Sepolia's native currency
+                    rpcUrls: ['https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'], // Replace 'your-infura-project-id' with your actual Infura project ID for Sepolia
                 },
-              ],
+            ],
+
+              // params: [
+              //   {
+              //     chainName: 'Goerli Test Network',
+              //     chainId: web3.utils.toHex(chainId),
+              //     nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
+              //     rpcUrls: ['https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+              //   },
+              // ],
             });
           } else if(chain === 'polygon') {
             await window.ethereum.request({
@@ -157,7 +166,7 @@ async function checkChain() {
             {
                 chainName: 'Sepolia Test Network',
                 chainId: '11155111', // Replace '0xsepoliachainid' with the actual chain ID of Sepolia
-                nativeCurrency: { name: '	SepoliaETH', decimals: 18, symbol: 'SEPT' }, // Adjust currency details as per Sepolia's native currency
+                nativeCurrency: { name: '	SepoliaETH', decimals: 18, symbol: 'SepoliaETH' }, // Adjust currency details as per Sepolia's native currency
                 rpcUrls: ['https://sepolia.infura.io/v3/'], // Replace 'your-infura-project-id' with your actual Infura project ID for Sepolia
             },
         ],
