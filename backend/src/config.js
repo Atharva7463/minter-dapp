@@ -46,7 +46,7 @@ const extraMetadata = {
 // ** REQUIRED **
 const AUTH = '460d8bb8-de76-4d05-aeba-48139f28e5b4'; // Set this in the .env file to prevent exposing your API key when pushing to Github
 const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'polygon'; // only goerli, polygon, or ethereum
+const CHAIN = 'ethereum'; // only goerli, polygon, or ethereum
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
 const CONTRACT_NAME = 'Pro.xyz';
